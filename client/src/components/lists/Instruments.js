@@ -29,8 +29,7 @@ const Instruments = props => {
     {data.instruments.map(({ id, year, brand, type, price, artistId })=> (
        (props.artistId === artistId) ?
       <List.Item key={id}>
-         <Instrument
-                  key={id}
+         <Instrument key={id}
                   id={id}
                   year={year}
                   brand={brand}
