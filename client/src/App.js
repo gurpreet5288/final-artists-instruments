@@ -1,18 +1,15 @@
 import React from 'react'
-
 import { ApolloClient, InMemoryCache } from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
 import { createHttpLink } from 'apollo-link-http'
 import Title from './components/layout/Title'
-
 import { Layout } from 'antd'
 import AddArtist from './components/forms/AddArtist'
-
+import AddInstrument from './components/forms/AddInstrument'
 import './App.css'
 import Artists from './components/lists/Artists'
 
 const { Content } = Layout
-
 const client = new ApolloClient({
   link: createHttpLink({ uri: 'http://localhost:4000/graphql' }),
   cache: new InMemoryCache()
@@ -24,9 +21,10 @@ const App = () => (
       <Content className='App'>
         <Title />
         <AddArtist />
+         <AddInstrument />
         <Artists />
       </Content>
-    </div>
+    </div> 
   </ApolloProvider>
 )
 

@@ -5,6 +5,7 @@ import { EditOutlined } from '@ant-design/icons'
 import UpdateArtist from '../forms/UpdateArtist'
 import RemoveArtist from '../buttons/RemoveArtist'
 
+import Instruments from '../lists/Instruments'
 const getStyles = () => ({
   card: {
     width: '500px'
@@ -38,7 +39,7 @@ const Artist = props => {
   const handleButtonClick = () => setEditMode(!editMode)
 
   return (
-    <List.Item key={props.id}>
+    <List.Item key={props.id} style={{ marginBottom: '60px'}}>
       {editMode ? (
         <UpdateArtist
           id={id}
@@ -48,6 +49,7 @@ const Artist = props => {
           updateStateVariable={updateStateVariable}
         />
       ) : (
+
         <Card
           actions={[
             <EditOutlined key='edit' onClick={handleButtonClick} />,
@@ -58,7 +60,10 @@ const Artist = props => {
           {fullName()}
         </Card>
       )}
+          <Instruments artistId={props.id} />
+
     </List.Item>
+    
   )
 }
 

@@ -43,3 +43,56 @@ export const REMOVE_ARTIST = gql`
     }
   }
 `
+
+
+export const GET_INSTRUMENTS = gql`
+{
+  instruments {
+    id
+    year
+    brand
+    type
+    price
+    artistId
+  }
+}
+`
+
+export const ADD_INSTRUMENT = gql`
+mutation AddInstrument($id: String!, $year: String!, $brand: String!, $type: String!, $price: String!, $artistId: String!) {
+  addInstrument(id: $id, year: $year, brand: $brand, type: $type, price: $price, artistId: $artistId) {
+    id
+    year
+    brand
+    type
+    price
+    artistId
+  }
+}
+`
+
+export const UPDATE_INSTRUMENT = gql`
+mutation UpdateInstrument($id: String!, $year: String!, $brand: String!, $type: String!, $price: String!, $artistId: String!) {
+  updateInstrument(id: $id, year: $year, brand: $brand, type: $type, price: $price, artistId: $artistId) {
+    id
+    year
+    brand
+    type
+    price
+    artistId
+  }
+}
+`
+
+export const REMOVE_INSTRUMENT = gql`
+mutation RemoveInstrument($id: String!) {
+  removeInstrument(id: $id) {
+    id
+    year
+    brand
+    type
+    price
+    artistId
+  }
+}
+`
